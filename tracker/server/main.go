@@ -1,15 +1,17 @@
 package main
 
 import (
-	"log"
 	"net"
 
 	"github.com/darren-west/marathon/tracker"
 	"github.com/darren-west/marathon/tracker/server/handler"
+	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 )
 
 func main() {
+	log.Info("Server starting...")
+
 	lis, err := net.Listen("tcp", ":8090")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
