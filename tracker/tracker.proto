@@ -1,0 +1,23 @@
+
+syntax = "proto3";
+
+package tracker;
+
+//import "google/protobuf/empty.proto";
+
+service LocationService {
+
+    rpc Create(CreateRequest) returns (CreateResponse);
+   //rpc List(google.protobuf.Empty) returns (Response);
+}
+
+message Location{
+    double Latitude = 1;
+    double Longitude = 2;
+}
+
+message CreateResponse{}
+
+message CreateRequest{
+    Location Location = 1;
+}
